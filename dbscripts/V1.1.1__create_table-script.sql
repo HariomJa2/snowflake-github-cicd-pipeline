@@ -1,4 +1,4 @@
-create table CICD_DB.TEST_SCHEMA.EMPLOYEE(
+create table CICD_DB.TEST_SCHEMA.EMPLOYEE_NEW(
   firstname string,
   lastname string
 );
