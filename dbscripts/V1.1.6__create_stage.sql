@@ -11,5 +11,5 @@ insert overwrite into CICD_TEST_DB.CICD_SCHEMA.EMP_TEST values('Hariom', 'jangir
 
 create stage if not exists CICD_TEST_DB.CICD_SCHEMA.TEST_STAGE;
 
-put file://test/test_file.sql @TEST_STAGE;
+put file://test/test_file.sql @CICD_TEST_DB.CICD_SCHEMA.TEST_STAGE;
 
