@@ -3,4 +3,4 @@ create table CICD_DB.TEST_SCHEMA.EMPLOYEE_NEW(
   lastname string
 );
 
-insert into CICD_DB.TEST_SCHEMA.EMPLOYEE values('supriya', 'maid');
+insert into CICD_DB.TEST_SCHEMA.EMPLOYEE_NEW values('supriya', 'maid');
