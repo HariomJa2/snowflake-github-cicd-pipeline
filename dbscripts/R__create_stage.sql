@@ -9,7 +9,11 @@ create table if not exists CICD_TEST_DB.CICD_SCHEMA.EMP_TEST(
 
 insert overwrite into CICD_TEST_DB.CICD_SCHEMA.EMP_TEST values('Hariom', 'jangir'),('H', 'Jangid');
 
-create stage if not exists CICD_TEST_DB.CICD_SCHEMA.TEST_STAGE;
+create or replace file format none_compression
+compression = None;
 
-put file://test/test_file.sql @CICD_TEST_DB.CICD_SCHEMA.TEST_STAGE;
+create stage if not exists CICD_TEST_DB.CICD_SCHEMA.TEST_STAGE
+file_format = none_compression;
+
+put file://test/* @CICD_TEST_DB.CICD_SCHEMA.TEST_STAGE;
 
