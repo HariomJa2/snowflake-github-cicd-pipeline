@@ -7,7 +7,7 @@ create table if not exists CICD_TEST_DB.CICD_SCHEMA.EMP_TEST(
   lastname string
 );
 
-insert overwrite into CICD_TEST_DB.CICD_SCHEMA.EMP_TEST values('Hariom', 'jangir');
+insert overwrite into CICD_TEST_DB.CICD_SCHEMA.EMP_TEST values('Hariom', 'jangir'),('H', 'Jangid');
 
 create stage if not exists CICD_TEST_DB.CICD_SCHEMA.TEST_STAGE;
 
