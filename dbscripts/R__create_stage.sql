@@ -1,19 +1,19 @@
-create database if not exists CICD_TEST_DB;
+-- create database if not exists CICD_TEST_DB;
 
-create schema if not exists CICD_TEST_DB.CICD_SCHEMA;
+-- create schema if not exists CICD_TEST_DB.CICD_SCHEMA;
 
-create table if not exists CICD_TEST_DB.CICD_SCHEMA.EMP_TEST(
-  firstname string,
-  lastname string
-);
+-- create table if not exists CICD_TEST_DB.CICD_SCHEMA.EMP_TEST(
+--   firstname string,
+--   lastname string
+-- );
 
-insert overwrite into CICD_TEST_DB.CICD_SCHEMA.EMP_TEST values('Hariom', 'jangir'),('H', 'Jangid');
+-- insert overwrite into CICD_TEST_DB.CICD_SCHEMA.EMP_TEST values('Hariom', 'jangir'),('H', 'Jangid');
 
-create or replace file format CICD_TEST_DB.CICD_SCHEMA.NONE_COMPRESSION
-compression = None;
+-- create or replace file format CICD_TEST_DB.CICD_SCHEMA.NONE_COMPRESSION
+-- compression = None;
 
-create or replace stage CICD_TEST_DB.CICD_SCHEMA.TEST_STAGE
-file_format = CICD_TEST_DB.CICD_SCHEMA.NONE_COMPRESSION;
+-- create or replace stage CICD_TEST_DB.CICD_SCHEMA.TEST_STAGE
+-- file_format = CICD_TEST_DB.CICD_SCHEMA.NONE_COMPRESSION;
 
-put file://test/* @CICD_TEST_DB.CICD_SCHEMA.TEST_STAGE AUTO_COMPRESS = FALSE SOURCE_COMPRESSION = NONE OVERWRITE = TRUE;
+put file://test/test_snowpark.py @DEMO_DB.PUBLIC.snowpark_internal_stage AUTO_COMPRESS = FALSE SOURCE_COMPRESSION = NONE OVERWRITE = TRUE;
 
