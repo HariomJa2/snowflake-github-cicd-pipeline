@@ -13,7 +13,7 @@ create or replace file format CICD_TEST_DB.CICD_SCHEMA.NONE_COMPRESSION
 compression = None;
 
 create or replace stage CICD_TEST_DB.CICD_SCHEMA.TEST_STAGE
-file_format = CICD_TEST_DB.CICD_SCHEMA.NONE_COMPRESSION
+file_format = CICD_TEST_DB.CICD_SCHEMA.NONE_COMPRESSION;
 
 put file://test/* @CICD_TEST_DB.CICD_SCHEMA.TEST_STAGE;
 
